@@ -10,16 +10,8 @@ export default class GalleryApiService {
     }
     
     async getImages() {
-        const searchParams = new URLSearchParams({
-            key: API_KEY,
-            q: this.searchQuery,
-            image_type: "photo",
-            orientation: 'horizontal',
-            safesearch: 'true',
-            per_page: this.perPage,
-            page: this.page,
-        });
-        const response = await axios.get(`${BASE_URL}/?${searchParams}`);
+        const URL = `${BASE_URL}/?image_type=photo&orientation=horizontal&safesearch=true&q=${this.searchQuery}&page=${this.page}&per_page=${this.perPage}&key=${API_KEY}`;
+        const response = await axios.get(URL);
         return await response.data;
     }
 
