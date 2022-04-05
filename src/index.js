@@ -16,7 +16,7 @@ const refs = {
 }
 
 const notifyOptions = {
-    width: '300px',
+    width: '320px',
     showOnlyTheLastOne: true,
     fontSize: '13pt',
 };
@@ -63,10 +63,6 @@ async function createGallery() {
             throw new Error();
         }
 
-        if (galleryApiService.page === 1) {
-            Notify.success(`Hooray! We found ${cards.totalHits} images.`, notifyOptions);
-        }
-
         createGalleryMarkup(cards.hits);
         simpleLightbox.refresh();
 
@@ -76,6 +72,11 @@ async function createGallery() {
             Notify.info("We're sorry, but you've reached the end of search results.", notifyOptions);
             loadMoreBtn.hide();
         }
+
+        if (galleryApiService.page === 1) {
+            Notify.success(`Hooray! We found ${cards.totalHits} images.`, notifyOptions);
+        }
+
     } catch (error) {
         catchError();
         loadMoreBtn.hide();
