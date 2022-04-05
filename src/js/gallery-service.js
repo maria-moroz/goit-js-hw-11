@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_KEY = '26514629-430be561a74f355a42f6b7f19';
+const API_KEY = '23111484-b23ce212a3b9e3a1a0d03b7eb';
 const BASE_URL = 'http://pixabay.com/api';
 
 export default class GalleryApiService {
