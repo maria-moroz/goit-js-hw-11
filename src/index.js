@@ -78,6 +78,7 @@ async function createGallery() {
         }
     } catch (error) {
         catchError();
+        loadMoreBtn.hide();
         console.log(error);
     }
 }
