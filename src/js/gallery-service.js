@@ -11,7 +11,6 @@ export default class GalleryApiService {
     
     async getImages() {
         const queryConfig = {
-            baseURL: BASE_URL,
             params: {
                 key: API_KEY,
                 q: this.searchQuery,
@@ -22,8 +21,7 @@ export default class GalleryApiService {
                 page: this.page,
             }
         };
-        //const response = await axios.get('', queryConfig);
-        const response = await axios.get(`https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=40&key=23111484-b23ce212a3b9e3a1a0d03b7eb`);
+        const response = await axios.get(`${BASE_URL}/`, queryConfig);
         return await response.data;
     }
 
