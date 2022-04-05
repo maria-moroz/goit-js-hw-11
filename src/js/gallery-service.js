@@ -19,6 +19,7 @@ export default class GalleryApiService {
             per_page: this.perPage,
             page: this.page,
         });
+
         const response = await axios.get(`${BASE_URL}/?${searchParams}`);
         return await response.data;
     }
