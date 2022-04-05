@@ -37,7 +37,7 @@ function onSearchFormSubmit(e) {
     clearGallery();
     galleryApiService.resetPage();
 
-    galleryApiService.query = refs.searchInput.value.trim().replace(' ', '+');
+    galleryApiService.query = refs.searchInput.value.trim();
 
     e.currentTarget.reset();
 
