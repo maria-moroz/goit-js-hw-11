@@ -19,7 +19,6 @@ export default class GalleryApiService {
             per_page: this.perPage,
             page: this.page,
         });
-        //const URL = `${BASE_URL}/?image_type=photo&orientation=horizontal&safesearch=true&q=${this.searchQuery}&page=${this.page}&per_page=${this.perPage}&key=${API_KEY}`;
         const response = await axios.get(`${BASE_URL}/?${searchParams}`);
         return await response.data;
     }
